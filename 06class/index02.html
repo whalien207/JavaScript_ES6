@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class Shape{
+            constructor(){
+
+            }
+
+            func = () => {
+                console.log("func호출");
+            }
+        }
+
+        class Rect extends Shape{
+            //프로그래머가 생성자를 직접만들게 되면 super를 통해 연결해야 한다.
+            constructor(w, h){
+                super(); //부모 생성자와 연결
+                this.w = w; //멤버변수의 저장
+                this.h = h;
+            }
+
+            setW = (x) => {
+                this.w = w;
+            }
+
+            getW = () => {
+                return this.w;
+            }
+
+            //set, get, static같은 키워드들로 함수를 설정할 수  있다.
+            // set setW(w){
+            //     this.w = w;
+            // }
+            
+        }
+
+        //객체생성
+        let rect = new Rect();
+        rect.func();//물려받음
+
+        //객체 생성2
+        let rect2 = new Rect(10, 20);
+        console.log(rect2.w);
+        console.log(rect2.h);
+
+    </script>
+
+</body>
+</html>
